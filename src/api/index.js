@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const compression = require('compression');
@@ -14,6 +15,9 @@ const endpoints = {
 
 // Bootstrap express server
 const app = express();
+app.use(cors({
+    origin: 'https://yolo-india.com'
+}))
 
 // Add Middlewares
 app.disable('x-powered-by');
